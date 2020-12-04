@@ -169,3 +169,20 @@ class Products {
                 console.error(e);
             })
     }
+
+// поиск по названию товара
+
+filter(product_name){
+    const regexp = new RegExp(product_name, 'i');
+    this.filtered = this.allProducts.filter(product => regexp.test(product.product_name));
+    this.allProducts.forEach(el => {
+      const unit = document.querySelector(`....id="${el.id_product}"`);
+      if(!this.filtered.includes(el)){
+        unit.classList.add('invisible');
+      } else {
+        unit.classList.remove('invisible');
+      }
+    })
+  }
+
+

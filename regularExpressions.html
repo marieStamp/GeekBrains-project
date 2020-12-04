@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <p id="text">
+            Helen: 'I want to tell you something about my holiday in London.'
+            Gareth: 'What d'you mean?'
+            Helen: 'I went to London in July.'
+            Gareth: 'So what?'
+            Helen: 'My parents went with me.'
+            Gareth: 'And?'
+            Helen: 'We spent three days in London.'
+            Gareth: 'Continue.'
+            Helen: 'London is a multicultural place.'
+            Gareth: 'Oh, I know.'
+            Helen: 'The people are so nice there.'
+            Gareth: 'I'm glad, you liked the city.'
+        </p>
+        <button id="replace">Изменить</button>
+        <script>
+            let text = document.getElementById('text');
+            document.getElementById('replace').addEventListener('click', () => {
+                text.textContent = text.textContent.replace(/\B'|'\B/g, '"');
+            });
+        </script>
+    </body>
+</html>
